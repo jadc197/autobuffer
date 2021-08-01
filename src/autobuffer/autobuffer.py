@@ -34,22 +34,3 @@ class autoBuffer:
                 flat_list = asarray(self.buffer[self.currentHalf2read]).ravel()
                 self.buffer[self.currentHalf2read] *= 0 # clear the just read buffer half
                 return flat_list
-
-if __name__ == '__main__':
-
-        autoBuf = autoBuffer(dummy_processing2)
-        #autoBuf = autoBuffer()
-
-        #incomingAddress = "tcp://localhost:5000"
-        incomingAddress = "tcp://10.2.10.1:5000"
-        outgoingAddress = "tcp://*:5010"
-        T0=Thread(target = autoBuf.enque, args=(incomingAddress,))
-        T0.start()
-        #time.sleep(1.1) #let it enque some to start with...
-        T1=Thread(target = autoBuf.deque, args=(outgoingAddress,))
-        T1.start()
-
-        input("Press any key to finish...")
-        autoBuf.event.set()
-        T0.join()
-        T1.join()
