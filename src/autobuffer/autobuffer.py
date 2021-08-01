@@ -16,6 +16,8 @@
 #                                                                               #
 #################################################################################
 
+from numpy import ravel, asarray
+
 class autoBuffer:
         def __init__(self):
                 self.buffer = [[],[]]
@@ -26,11 +28,12 @@ class autoBuffer:
                 self.buffer[self.currentHalf2write].append(item)
 
         def deque(self):
-		self.currentHalf2read = self.currentHalf2write
-		self.currentHalf2write = 1-self.currentHalf2write # Toggle it!
-		flat_list = [item for row in self.buffer[self.currentHalf2read] for item in row]
-		self.buffer[self.currentHalf2read] *= 0 # clear the just read buffer half
-		return flat_list
+                self.currentHalf2read = self.currentHalf2write
+                self.currentHalf2write = 1-self.currentHalf2write # Toggle it!
+                #flat_list = [item for row in self.buffer[self.currentHalf2read] for item in row]
+                flat_list = asarray(self.buffer[self.currentHalf2read]).ravel()
+                self.buffer[self.currentHalf2read] *= 0 # clear the just read buffer half
+                return flat_list
 
 if __name__ == '__main__':
 
