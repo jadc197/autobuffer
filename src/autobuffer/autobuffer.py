@@ -16,8 +16,6 @@
 #                                                                               #
 #################################################################################
 
-from numpy import ravel, asarray
-
 class autoBuffer:
         def __init__(self):
                 self.buffer = [[],[]]
