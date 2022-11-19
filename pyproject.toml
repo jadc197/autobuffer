@@ -1,0 +1,18 @@
+[project]
+name = "autobuffer"
+version = "0.0.4"
+authors = [
+  { name="João Dias Carrilho", email="author@example.com" },
+]
+description = "A simple and fast automatic double buffer class"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/jadc197/autobuffer"
+"Bug Tracker" = "https://github.com/jadc197/autobuffer/issues"
