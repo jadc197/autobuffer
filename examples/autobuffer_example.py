@@ -43,7 +43,7 @@ def MyDataSink(inaddress):
 
 
 def MyProcessingFunction(data):
-    # example processing: calculate the product of all data points
+    # example processing: calculate the sum of all data points
     result = np.sum(data)
     print(round(len(data)/4096)) # this will print how many data blocks were queued by autobuffer
     return result
