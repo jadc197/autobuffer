@@ -1,1 +1,1 @@
-from autobuffer.autobuffer import autoBuffer
+from .autobuffer import autoBuffer
