@@ -1,6 +1,6 @@
 [project]
 name = "autobuffer"
-version = "0.0.7"
+version = "0.0.8"
 authors = [
   { name="João Dias Carrilho", email="author@example.com" },
 ]
